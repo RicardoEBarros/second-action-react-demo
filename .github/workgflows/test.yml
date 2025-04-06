@@ -1,0 +1,25 @@
+name: Testar Projeto
+on:
+  push:
+    branchs: 
+      "main"
+
+jobs:
+  teste:
+
+    strategy:
+    matrix:
+      node_version: [20.14.x]
+
+    runs-on: ubuntu:latest
+    steps: 
+      - name: Obter Repositório
+        uses: actions/checkout@v3
+      - name: Instalar NodeJs
+        uses: actions/setup-node@v3
+        with: 
+          node-version: {{ matrix.node_version }}
+      - name: Instalar Dependências
+        run: npm ci
+      - name: Testes
+        run: npm t
