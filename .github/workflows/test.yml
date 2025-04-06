@@ -2,7 +2,7 @@ name: Testar Projeto
 on:
   push:
     branches: 
-      "main"
+      - "main"
 
 jobs:
   teste:
