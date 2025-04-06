@@ -22,4 +22,4 @@ jobs:
       - name: Instalar Dependências
         run: npm ci
       - name: Testes
-        run: npm t
+        run: npm run test
